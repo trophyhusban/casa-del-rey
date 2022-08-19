@@ -1,7 +1,7 @@
 INCLUDE burns_variables.ink
 INCLUDE burns.ink
 
--> enter_burns_room
+-> lost_and_found
 
 // the idea here is that Amber enters the ghost world and talks to the kiosk ghost. at this point, i could imagine letting the player ask her more questions, but this might work for now.
 // there are no variables or anything in this file and it should not have to rely on any other file for it to work. at the end, it transitions to the lobby area, and the player can choose where they want Amber to go
@@ -17,12 +17,12 @@ She stares at the woman behind the kiosk for a second before approaching her. Sh
 The woman just stares back.
 What should the girl do?
 
-* [Ask her what is going on.] "What is happening here? Why is it so dark?"
+* [Ask her what is going on] "What is happening here? Why is it so dark?"
 
-* [Ask her what floor this is.] "What floor am I on? How did I get here?"
+* [Ask her what floor this is] "What floor am I on? How did I get here?"
 "The first floor," the woman says. <>
 
-* [Ask her about the AC.] "Can you turn the AC down? It's freezing in here."
+* [Ask her about the AC] "Can you turn the AC down? It's freezing in here."
 "The air conditioning isn't on," the woman says. <>
 
 - -> debbie_conversation
@@ -34,75 +34,76 @@ The girl just looks at her. "What, do you think I'm twelve?"
 
 "That's not what I meant." The woman looks distant, frightened almost. She offers the girl her hand, palm up. She looks at it for a few moments.
 
-* [Shake it.] The girl goes in for a hand shake, her fingers awkwardly forming something resembling a friendly gesture.
+* [Shake it] The girl goes in for a hand shake, her fingers awkwardly forming something resembling a friendly gesture.
 She can't grip the woman's hand, and instead goes right through it.
 
-* [Give her a high-five.] The girl goes in fast for a high-five.
+* [Give her a high-five] The girl goes in fast for a high-five.
 She goes right through her hand, hitting the black granite countertop.
 
-* [Fist-bump her.] The girl goes for a fist-bump.
-She awkwardly jabs her fist forward and she goes right through the woman's hand, recoiling when she sees her fist inside the woman's wrist.
+* [Fist-bump her] The girl goes for a fist-bump.
+She awkwardly jabs her fist forward and goes right through the woman's hand, recoiling when she sees her fist inside her wrist.
 
 -
 The woman looks apologetic. "Do you see why you don't belong here?"
-"Am I dead?" the girl blurts. She puts her hand to her heart, then her neck, and then her fingers to her wrist. She doesn't know what to believe.
+"Am I dead?" the girl blurts. She puts her hand to her heart, then her neck, and then her fingers to her wrist.
 "No. You've entered the world of the dead, through that elevator there. We keep meaning to have that extra button removed, but maintenance hasn't gotten around to it yet."
 After a moment of processing, she put her palms to her face. "I'm such an idiot. For real."
-"Don't fret! There is a ritual that you can do to get back to where you belong. You'll just need to find a few things."
+"Don't fret! I am sure there is a way out of here, just, um..." The woman opens a ledger on her desk and runs her finger down a column of names, looking for something that isn't there.
 
 // maybe this is a good moment for more description?
-The girl looks behind her, taking in the lobby. The fountain, in the center of the room, gurgles. In the corners of the room are a gift shop, a seating area for a restaurant, a lounge, and an office. She  turns back to the woman at the kiosk, and then looks at her hands.
+The girl looks behind her, taking in the lobby. The fountain in the center of the room gurgles. In the corners of the room are a gift shop, a seating area for a restaurant, a lounge, and an office. She  turns back to the woman at the kiosk, and then looks at her hands.
 
-* [Stay calm.]
+* [Stay calm]
 How is she supposed to stay calm?
 
-* [Panic.]
+* [Panic]
 
 -
 Her breathing quickens as she looks around. She makes eye contact with a few strangers.
-"Hey," the ghost says. "Just breathe, that's what the living does, right?"
+"Hey," the ghost says. "Just breathe. That's what the living does, right?"
 She breathes. She smiles, processing the joke. "Yeah, that's generally what we like to do."
 "What's your name?"
 "Amber." Her name is Amber.
-"I'm Debbie." After a pause, she goes on. "I think you're gonna be alright. Do you want to hear about the ritual?"
-"Yeah."
-"So you need to find five candles, some charcoal, and a precious stone, okay? You should be able to find them around here."
+"I'm Debbie." After a pause, she goes on. "I think you're gonna be alright. I just need to talk to someone."
+"Okay."
+"Please don't worry, I have an expert I can talk to! Just wait here for a moment." Debbie starts rifling through her desk, looking for a name, or a phone number, or something. She seems completely absorbed in her task. Watching her, Amber notices her whiteish tint and the see-through quality of her form.
 
--> ask_about_ritual_items
+Amber locates a chair by a cluster of tables and sits down. She does not want to just sit and wait for Debbie to come back, but it's a good start.
 
-=== ask_about_ritual_items ===
+* There's another way
 
-* [Ask about the candles.] "Where would I find candles?"
-"There should be a man by the name of Burns who has some candles. He's been staying here a while, trying to sell those candles, but no one seems interested. He's staying in room 203"
-"That's the room my parents are staying in. Me and my sister are next door."
-"Great, so you know where it is!"
-"I guess I do."
+-
+Amber listens.
 
-* [Ask about the charcoal.]
-"You should be able to find some in the kitchen. The chef there can be kind of a stickler, but if you get on his good side, he will probably give you some. Feel free to knock on the kitchen door."
-"That should be doable."
+* There's a ritual you can do
 
-* [Ask about the precious stone.]
-"There should be an elegant-looking woman around here somewhere with way too much jewelry for her own good. I bet you can get her to part with some of it if you're lucky!"
-"That sounds actually painful. But thank you for telling me."
+-
+Amber waits.
 
-* [Thank Debbie for helping out.]
-"Thank you!"
-"Of course! Please ask me if you need any more help>"
-Amber nods, turns around, and looks at the lobby.
--> end_of_scene
 
-* [Start searching for the stuff Debbie mentioned.]
-Amber turns around before deciding to thank Debbie, feeling slightly embarrassed, and walks away.
--> end_of_scene
+-> describe_ritual_items
 
-- -> ask_about_ritual_items
--> END
+// this would be a good point to add knowledge about the ritual/the ritual items to the knowledge inventory
+=== describe_ritual_items ===
 
-== end_of_scene ==
+* Five candles
+A candle salesman named Burns lives in room 302.
+
+* Charcoal
+From the kitchen. The chef believes in working for what one needs.
+
+* A ruby
+An elegant woman named Gloria should have an excess.
+
+* -> end_of_intro
+
+- -> describe_ritual_items
+
+
+== end_of_intro ==
+Amber got up and looked around her suspiciously.
 -> END
 // so here we would divert into the rest of the story
-
 
 
 

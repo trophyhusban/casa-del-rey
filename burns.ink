@@ -13,18 +13,6 @@ Amber knocks on the door to Burns' room. {In an instant|After a second|Almost im
 
 -> burns_explore
 
-=== give_burns_gloves ===
-* [Give Burns the gloves.] Amber shows Burns the gloves she got from Debbie. "Yeah I got them from lost and found."
-Burns stares at the gloves in her hands before slowly reaching for them. He touches them tenderly. "I don't actually know what to do with these," he says. "Thank you so much."
-"No problem." Amber looks at Burns for a moment before he realizes.
-"Oh, of course!" He bends over and takes five candles from the suitcase handing them to Amber.
-"Do you have any black ones?" She asks. "That would go better with the whole ghostly ritual aesthetic."
-"Um, yeah I do." He takes five black ones from his suitcase and gives them to her. "Thank you so much."
-"Yeah it's no problem."
-
-at this point amber leaves the hotel room and goes back to the second floor location
--> END
-
 === burns_intro ===
 Amber knocks on the door to room 203, shifting on her feet. She has a taut look on her face.
 "Hello?" Someone calls from inside. Something blocks the light coming through the peephole. "Yes, come in!"
@@ -131,6 +119,62 @@ bathroom description
 amber leaves description
 -> END
 - -> burns_explore
+
+// so this should be enabled if you are talking to Debbie in the lobby and if you have already spoken to Burns but have not yet given him the gloves
+=== get_gloves ===
+"Hi!" Debbie says when Amber approaches. Her eyebrows are raised and she's avoiding eye contact.
+"Hey," Amber says. "Do you have a lost and found somewhere?"
+"Yeah, right over here actually." Debbie bends down and picks up a plastic bin, putting it on the counter. "Did you lose something already?"
+"No. I'm actually picking something up for someone else."
+"Okay. Everything here is ancient anyway, so please have a look."
+"Thanks." Amber lifts the bin and puts it on the ground. She takes the lid off and has a look. It's full of shit.
+-> lost_and_found
+
+== lost_and_found ===
+{!What should Amber take?}
+
+* [A set of black socks with cat faces on them]
+Cute, but not her style.
+
+* [A silver spoon]
+It's become brown. Amber doesn't want to touch it.
+
+* [An old leather bound notebook, some of the pages sticking out]
+Amber is excited to read through some stranger's secrets, but everything is in Russian.
+
+* [A pair of beekeeping gloves]
+Yes! Just what she was looking for.
+The thick, white gloves each have a mesh that extends past Amber's elbow. Burns' boyfriend must have had long arms.
+Amber takes the gloves.
+~ has_gloves = true
+
+* [A pair of broken glasses]
+Amber tries them on and immediately takes them off, not wanting to risk a headache.
+
+* [Car keys]
+The car keys are attached to a plastic Hello Kitty keychain.
+"Um, these seem important," she says to Debbie.
+Debbie shrugs. "If they were important, the person who lost them would have come back for them already."
+
+* {has_gloves} [Leave] "Thank you," Amber says, putting the bin back on the counter. "This is all I need."
+"Glad I could be of service."
+
+-> END
+
+- -> lost_and_found
+
+=== give_burns_gloves ===
+* [Give Burns the gloves.] Amber shows Burns the gloves she got from Debbie. "Yeah I just got them from lost and found. Kind of an obvious place."
+Burns stares at the gloves in her hands before slowly reaching for them. He touches them tenderly. "I don't actually know what to do with these," he says. "Thank you so much."
+"No problem." Amber looks at Burns for a moment before he realizes.
+"Oh, of course!" He bends over and takes five candles from the suitcase handing them to Amber.
+"Do you have any black ones?" She asks. "That would go better with the whole ghostly ritual aesthetic."
+"Um, yeah I do." He takes five black ones from his suitcase and gives them to her. "Thank you so much."
+"Yeah it's no problem."
+
+at this point amber leaves the hotel room and goes back to the second floor location
+-> END
+
 
 
 
