@@ -4,30 +4,42 @@
     -> burns_intro
 }
 
-Amber knocks on the door to Burns' room. {In an instant|After a second|Almost immediately|In a moment}, he answers the door.
+Amber knocks on the door to Burns' room. {In an instant|After a second|In a moment}, he answers the door.
 "Do you have them?" He asks her.
 
 {has_gloves == true:
     -> give_burns_gloves
 }
+{asked_burns_where_to_look == false:
+    "No," Amber says. "Do you know where they could be?"
+    "I have no idea. I could only see from in this room. I can sense that they are nearby." He looks out the window with a frown. "Maybe Debbie's seen them?"
+    * [Go look for them] "Okay, I'll talk to her." Amber leaves.
+    
+    ~ asked_burns_where_to_look = true
+    -> END
+- else:
+    "Did you talk to Debbie?" Burns asks.
+    "Not yet," Amber says.
+    * [Go talk to her] Amber leaves.
+    -> END
+}
 
--> burns_explore
 
 === burns_intro ===
 Amber knocks on the door to room 203, shifting on her feet. She has a taut look on her face.
 "Hello?" Someone calls from inside. Something blocks the light coming through the peephole. "Yes, come in!"
-Amber reaches for the handle, but it won't open. "Um, it's locked? Like every hotel room?"
+Amber reaches for the handle, but it won't open. "Um, it's locked. Like every hotel room?"
 The person inside opens the door. "Right. Sorry." He is a round, kind-looking man with a large white mustache. He peers at Amber with raised eyebrows through his pince-nez, which is connected by a chain to his tweed coat. Like the other ghosts, he has a whitish tint to him and he was ever so slightly see-through.
 Amber cranes her neck, looking past him to get a look at the room.
 He turns around too, looking between Amber and his room.
 "Um, come inside!" He says, opening the door and stepping back.
 
 What should Amber do?
-* [Go inside.]
+* [Go inside]
 She <>
-* [Thank the man.]
+* [Thank the man]
 Instead, she <>
-* [Introduce herself.]
+* [Introduce herself]
 Instead, she <>
 
 -
@@ -46,11 +58,11 @@ She shakes it warily.
 "Nope. And I'm assuming you won't just like, lend them to me, so I can make it out of here alive, or anything."
 "Candles aren't the kind of thing you can exactly return after using them. Though I suppose there could be another way."
 
-* [Wait for him to explain.] Amber says nothing. She gestures for him to go on.
+* [Wait for him to explain] Amber says nothing. She gestures for him to go on.
 "<>
-* [Ask him what he means.] "What do you have in mind?"
+* [Ask him what he means] "What do you have in mind?"
 "<>
-* [Ask him about trading for the candles.] "Do you mean like a trade?"
+* [Ask him about trading for the candles] "Do you mean like a trade?"
 "Yes, a trade. <>
 -
 Perhaps if you... would listen to my tragic backstory," he says dramatically.
@@ -69,24 +81,24 @@ What should Amber do?
 -> burns_intro_questions
 
 === burns_intro_questions ===
-* [Ask why she can't just take them off his hands for free.] "Why can't you just give them to me? Won't that fulfill your unfinished business?"
+* [Ask why she can't just take them off his hands for free] "Why can't you just give them to me? Won't that fulfill your unfinished business?"
 "No." Burns shakes his head. "Because I was a merchant when I was living, it has to be through commerce that I get rid of them."
 "Wait but why does it have to be British pounds if you were a merchant in Santa Cruz?"
 "Because..." Burns looks away. "Because that's what I'm used to."
 -> burns_intro_questions
 
-* [Ask if she can just steal them.] "What if, in theory, you suddenly realized that they were all missing? Like if someone stole them without you noticing? Wouldn't that be enough for you to move on?"
+* [Ask if she can just steal them] "What if, in theory, you suddenly realized that they were all missing? Like if someone stole them without you noticing? Wouldn't that be enough for you to move on?"
 "That won't work." Burns runs a hand through his mustache. "I think that would only make my unfinished business harder to finish. If not being able to sell them is what is keeping me here, then surely having them stolen will only make me more unable to sell them."
 -> burns_intro_questions
 
-* [Ask if that is really what is keeping him there.] "Are you sure that the candles are what is keeping you here? Are you sure it's not something else, like your dead boyfriend?"
+* [Ask if that is really what is keeping him there] "Are you sure that the candles are what is keeping you here? Are you sure it's not something else, like your dead boyfriend?"
 <em>"Boyfriend?</em> I wouldn't call him that."
 "Well, whatever, dude, the guy you're clearly in love with who you died apart from and whose gloves might still be in the hotel."
 "Well if you found the gloves belonging to that person then it would certainly be a good trade for some of my candles. Maybe then I will be able to move on."
-"Sounds good." Amber stands up from her seat.
+"Sounds good." Amber stands up from her seat. She leaves without saying goodbye.
 
 ~ knows_to_look_for_gloves = true
--> burns_explore
+-> END
 
 === burns_interrupt_intro ===
 
@@ -98,27 +110,10 @@ Burns looks at the floor. "That would be wonderful." He crosses his arms. "We we
 "What?"
 "I need five candles for the ritual."
 "Yes, five candles." He nods.
-"Okay." Amber stands up from her seat.
+"Okay." Amber stands up from her seat. "I'll be right back."
 
 ~ knows_to_look_for_gloves = true
--> burns_explore
-
-=== burns_explore ===
-{~Burns sits on the bed.|Burns stretches.|Burns coughs.|Burns paces the room.|Burns looks at Amber.|Burns picks up a candle from his suitcase.|Burns crosses his arms.|Burns starts to fold some laundry, but puts it back on the ground.}
-+ [Examine the desk.]
-desk description
-+ [Examine the nightstand.]
-nightstand description
-+ [Examine the suitcase of candles.]
-suitcase description
-+ [Examine the suitcase of clothes.]
-suitcase 2 description
-+ [Examine the bathroom.]
-bathroom description
-+ [Leave the room.]
-amber leaves description
 -> END
-- -> burns_explore
 
 // so this should be enabled if you are talking to Debbie in the lobby and if you have already spoken to Burns but have not yet given him the gloves
 === get_gloves ===
@@ -164,7 +159,7 @@ Debbie shrugs. "If they were important, the person who lost them would have come
 - -> lost_and_found
 
 === give_burns_gloves ===
-* [Give Burns the gloves.] Amber shows Burns the gloves she got from Debbie. "Yeah I just got them from lost and found. Kind of an obvious place."
+* [Give Burns the gloves] Amber shows Burns the gloves she got from Debbie. "Yeah I just got them from lost and found. Kind of an obvious place."
 Burns stares at the gloves in her hands before slowly reaching for them. He touches them tenderly. "I don't actually know what to do with these," he says. "Thank you so much."
 "No problem." Amber looks at Burns for a moment before he realizes.
 "Oh, of course!" He bends over and takes five candles from the suitcase handing them to Amber.

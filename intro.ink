@@ -1,7 +1,7 @@
 INCLUDE burns_variables.ink
 INCLUDE burns.ink
 
--> lost_and_found
+-> intro
 
 // the idea here is that Amber enters the ghost world and talks to the kiosk ghost. at this point, i could imagine letting the player ask her more questions, but this might work for now.
 // there are no variables or anything in this file and it should not have to rely on any other file for it to work. at the end, it transitions to the lobby area, and the player can choose where they want Amber to go
