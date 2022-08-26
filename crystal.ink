@@ -33,15 +33,15 @@ Her face quickly turns into one of disgust as she walks away and into the elevat
 }
 === crystal_questions_debbie ===
 
-Amber walks up to Debbie. “Can you tell me more about the woman in the green dress?” She asks. 
+Amber walks up to Debbie. “Can you tell me more about the woman in the green dress?” She asks.
 
 “Oh! That’s Gloria Ashaben, what would you like to know about her?”
 ->crystal_questions_options
 ===crystal_questions_options===
-* [Ask what they were talking about] 
-“What were the two of you talking about?” 
+* [Ask what they were talking about]
+“What were the two of you talking about?”
 
-“She was just asking about Monica White seeing if I knew anything about her.” Debbie lets out a sigh. “But between you and me, Gloria is always out trying to create drama for no reason. Loves to spread gossip, that one.” 
+“She was just asking about Monica White seeing if I knew anything about her.” Debbie lets out a sigh. “But between you and me, Gloria is always out trying to create drama for no reason. Loves to spread gossip, that one.”
 ->crystal_questions_options
 
 * [Ask where you can find her] “Where is she usually?”
@@ -83,10 +83,10 @@ Amber enters the relatively small gift shop filled on the sides with various stu
 === gift_shop_options ===
 
 * [Approach the cashier] Amber shakes her head. “Looks like he really doesn’t want to be bothered.”
-->gift_shop_options  
+->gift_shop_options
 
 {-(monica_knows == true)
-*  [Go talk to the witch] 
+*  [Go talk to the witch]
 -> monica_intro
 }
 
@@ -95,9 +95,9 @@ Amber enters the relatively small gift shop filled on the sides with various stu
 
 
 == monica_intro===
-Amber walks up to the aisle where the witch hat is poking through. As she spots the witch, her mouth immediately puckers in and she cringes at what she sees. Monica White, the self-proclaimed witch. A young woman, wearing a comical witch hat and a set of matching black robes that covers her olive skin. She adjusts her oval glasses, turns to stare at Amber, and breaks out into a huge smile. 
+Amber walks up to the aisle where the witch hat is poking through. As she spots the witch, her mouth immediately puckers in and she cringes at what she sees. Monica White, the self-proclaimed witch. A young woman, wearing a comical witch hat and a set of matching black robes that covers her olive skin. She adjusts her oval glasses, turns to stare at Amber, and breaks out into a huge smile.
 
-“Oh my god, hi! An actual living person!” Monica rushes over to greet Amber who instinctively takes a step back. “Sorry, I’m Monica White. How can I help you?” She says eagerly. 
+“Oh my god, hi! An actual living person!” Monica rushes over to greet Amber who instinctively takes a step back. “Sorry, I’m Monica White. How can I help you?” She says eagerly.
 
 ->monica_intro_questions
 
@@ -106,7 +106,7 @@ Amber walks up to the aisle where the witch hat is poking through. As she spots 
 == monica_intro_questions===
 * [Ask her what she’s doing] “What are you doing?”
 
-“Oh, just gathering ingredients for my next spell! You see, as a witch, I’m trying to make a ritual that will make me extremely desirable. That way, I can live this life in luxury like most of the well-off individuals here! Unfortunately, they don’t have unicorn blood, so I’m trying to find a substitute…” Monica trails off looking at the aisle next to her. 
+“Oh, just gathering ingredients for my next spell! You see, as a witch, I’m trying to make a ritual that will make me extremely desirable. That way, I can live this life in luxury like most of the well-off individuals here! Unfortunately, they don’t have unicorn blood, so I’m trying to find a substitute…” Monica trails off looking at the aisle next to her.
 
 
 “Okay,” Amber says skeptically.
@@ -125,15 +125,15 @@ Amber walks up to the aisle where the witch hat is poking through. As she spots 
 
 {
 -(monica_knows == true)
-* [Convince Monica to work with you] “What if I helped you?” 
+* [Convince Monica to work with you] “What if I helped you?”
 
-“How would you help me?” Monica asks. 
-“Is there anything you really want from Gloria?” Amber asks. 
-“Well, there are those diamond earrings I see her wear all the time” Monica mumbles to herself. 
-Amber smiles wide. “Well, if Gloria leaves her room to go after you, I can sneak in and take the earrings.” 
+“How would you help me?” Monica asks.
+“Is there anything you really want from Gloria?” Amber asks.
+“Well, there are those diamond earrings I see her wear all the time” Monica mumbles to herself.
+Amber smiles wide. “Well, if Gloria leaves her room to go after you, I can sneak in and take the earrings.”
 Monica looks at Amber in confusion. “What do you get out of this?”
 
-“I need a ruby crystal for a ritual,” Amber confesses. 
+“I need a ruby crystal for a ritual,” Amber confesses.
 Monica’s face brightens with a huge smile. “Oh! A fellow witch! Okay, I will be waiting for Gloria in the lobby. Meet me there when you’re done.”
 
 
@@ -146,7 +146,7 @@ Gloria walks off with a pep in her step, followed shortly by Amber.
 
 //2nd floor Option
 {-(monica_knows == true)
-*  [Go to Gloria’s room] 
+*  [Go to Gloria’s room]
 -> gloria_room
 }
 
@@ -170,7 +170,7 @@ Amber walks up to Gloria’s room and knocks on the door. “Just a moment!” G
 
 -
 
-After a short moment, Gloria opens the door again. “Go on.” She says and looks down at her. 
+After a short moment, Gloria opens the door again. “Go on.” She says and looks down at her.
 
 
 * [Tell her Monica is downstairs] “Monica White is looking for you. It seems like she wanted to confess something. I’m not entirely sure what though, she’s downstairs if you want to talk to her.”
@@ -185,18 +185,20 @@ Gloria smiles and lets out a short laugh. “About time, I always knew she was u
 
 Amber looks around one final time before entering the room that Gloria had left open. As she enters,Amber squints and shakes her head because of all the shiny decorations in the room. Amber speed walks towards what looks like Gloria’s makeup table and begins rummaging before pulling out a large, bedazzled box.
 
-* [Open the box] Amber opens the box and immediately spots the ruby necklace alongside other jewlery pieces and takes it. 
+* [Open the box] Amber opens the box and immediately spots the ruby necklace alongside other jewlery pieces and takes it.
 -
 
 * [Get the earrings] Amber takes a pair of matching diamond earrings.
 
 * [Leave before she’s caught] “I won’t do that to her,” Amber mutters, taking a pair of diamond earrings.
 
--  
+-
 
 Amber quickly closes the box, places it back to where it belongs and leaves the room. As she closes the door, Gloria comes out around the corner. “Oh, you’re still here.” She sneers before pushing past her and entering her room.
 
 ~gloria_tricked  = true
+//Crystal is added into inventory
+
 
 -> 2nd floor
 
@@ -210,6 +212,7 @@ Gloria’s face brightens with the news. “I knew it!” She whisper-yells. “
 “Oh sure!” Gloria exclaims. “Give me one moment.” Gloria enters her room for a moment. Once she comes back, Gloria gives the amulet to Amber. “This will go lovely with your,” she pauses for a moment, “pajamas. Now, time to get Monica shunned!” Gloria says before making sure her door is closed and walks away.
 
 ~monica_betrayed  = true
+//Crystal is added into inventory
 
 
 -> 2nd floor
@@ -221,7 +224,7 @@ Gloria’s face brightens with the news. “I knew it!” She whisper-yells. “
 }
 ===monica_jewlery===
 
-Amber looks around and spots Monica sitting down alone at a table. Monica spots Amber as she begins to walk closer and gives a huge smile. 
+Amber looks around and spots Monica sitting down alone at a table. Monica spots Amber as she begins to walk closer and gives a huge smile.
 
 “Here are the earrings” Amber says as she places them down at the table. Monica lets out a big smile. “Thank you so much! This will go great with the next spell I’ll be working on!”
 
@@ -237,7 +240,7 @@ Monica bounces up from her seat and give Amber a big hug before speed walking aw
 }
 ===monica_shunned ===
 
-As Amber looks around to find Monica, her voice echoes throughout the room. “Please, somebody, talk to me!” She yells as she makes her way around the room. She walks up to another ghost and goes to touch her, but before she could make contact the ghost steps back and walks away, not even acknowledging her presence. Monica looks around frantically and spots Debbie and begins to walk her way. As Monica begins to walk however, Debbie turns and looks the other direction. 
+As Amber looks around to find Monica, her voice echoes throughout the room. “Please, somebody, talk to me!” She yells as she makes her way around the room. She walks up to another ghost and goes to touch her, but before she could make contact the ghost steps back and walks away, not even acknowledging her presence. Monica looks around frantically and spots Debbie and begins to walk her way. As Monica begins to walk however, Debbie turns and looks the other direction.
 With tears in her eyes, Monica looks over at Amber. “Please,” she whispers loud enough for Amber to hear.
 
 *[Talk to her] Amber shakes her head and looks away.
