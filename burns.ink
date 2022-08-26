@@ -1,5 +1,5 @@
 === enter_burns_room ===
-
+~in_convo = true
 {saw_burns_intro == false:
     -> burns_intro
 }
@@ -7,7 +7,7 @@
 Amber knocks on the door to Burns' room. {In an instant|After a second|In a moment}, he answers the door.
 "Do you have them?" He asks her.
 
-{has_gloves == true:
+{inventory ? gloves:
     -> give_burns_gloves
 }
 {asked_burns_where_to_look == false:
@@ -16,12 +16,14 @@ Amber knocks on the door to Burns' room. {In an instant|After a second|In a mome
     * [Go look for them] "Okay, I'll talk to her." Amber leaves.
     
     ~ asked_burns_where_to_look = true
-    -> END
+    ~currentlocation = landing
+    ->top_loop
 - else:
     "Did you talk to Debbie?" Burns asks.
     "Not yet," Amber says.
     * [Go talk to her] Amber leaves.
-    -> END
+    ~currentlocation = landing
+    ->top_loop
 }
 
 
@@ -98,7 +100,9 @@ What should Amber do?
 "Sounds good." Amber stands up from her seat. She leaves without saying goodbye.
 
 ~ knows_to_look_for_gloves = true
--> END
+~in_convo = false
+~currentlocation = landing
+->top_loop
 
 === burns_interrupt_intro ===
 
@@ -113,10 +117,13 @@ Burns looks at the floor. "That would be wonderful." He crosses his arms. "We we
 "Okay." Amber stands up from her seat. "I'll be right back."
 
 ~ knows_to_look_for_gloves = true
--> END
+~in_convo = false
+~currentlocation = landing
+->top_loop
 
 // so this should be enabled if you are talking to Debbie in the lobby and if you have already spoken to Burns but have not yet given him the gloves
 === get_gloves ===
+~in_convo = true
 "Hi!" Debbie says when Amber approaches. Her eyebrows are raised and she's avoiding eye contact.
 "Hey," Amber says. "Do you have a lost and found somewhere?"
 "Yeah, right over here actually." Debbie bends down and picks up a plastic bin, putting it on the counter. "Did you lose something already?"
@@ -141,7 +148,7 @@ Amber is excited to read through some stranger's secrets, but everything is in R
 Yes! Just what she was looking for.
 The thick, white gloves each have a mesh that extends past Amber's elbow. Burns' boyfriend must have had long arms.
 Amber takes the gloves.
-~ has_gloves = true
+~get(gloves)
 
 * [A pair of broken glasses]
 Amber tries them on and immediately takes them off, not wanting to risk a headache.
@@ -151,10 +158,10 @@ The car keys are attached to a plastic Hello Kitty keychain.
 "Um, these seem important," she says to Debbie.
 Debbie shrugs. "If they were important, the person who lost them would have come back for them already."
 
-* {has_gloves} [Leave] "Thank you," Amber says, putting the bin back on the counter. "This is all I need."
+* {inventory ? gloves} [Leave] "Thank you," Amber says, putting the bin back on the counter. "This is all I need."
 "Glad I could be of service."
-
--> END
+~in_convo = false
+-> top_loop
 
 - -> lost_and_found
 
@@ -166,8 +173,10 @@ Burns stares at the gloves in her hands before slowly reaching for them. He touc
 "Do you have any black ones?" She asks. "That would go better with the whole ghostly ritual aesthetic."
 "Um, yeah I do." He takes five black ones from his suitcase and gives them to her. "Thank you so much."
 "Yeah it's no problem."
-
-at this point amber leaves the hotel room and goes back to the second floor location
+~use(gloves)
+~get(candles)
+~in_convo = false
+// at this point amber leaves the hotel room and goes back to the second floor location
 -> END
 
 

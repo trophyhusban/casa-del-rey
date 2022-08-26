@@ -1,5 +1,10 @@
-INCLUDE burns_variables.ink
 INCLUDE burns.ink
+INCLUDE variables.ink
+INCLUDE inventory.ink
+INCLUDE navigation.ink
+INCLUDE charcoal.ink
+
+
 
 -> intro
 
@@ -16,6 +21,7 @@ She stares at the woman behind the kiosk for a second before approaching her. Sh
 "Hi," the girl says to the woman at the kiosk, rubbing her arms with her hands.
 The woman just stares back.
 What should the girl do?
+
 
 * [Ask her what is going on] "What is happening here? Why is it so dark?"
 
@@ -70,12 +76,12 @@ She breathes. She smiles, processing the joke. "Yeah, that's generally what we l
 
 Amber locates a chair by a cluster of tables and sits down. She does not want to just sit and wait for Debbie to come back, but it's a good start.
 
-* There's another way
+* There's another way.
 
 -
 Amber listens.
 
-* There's a ritual you can do
+* There's a ritual you can do.
 
 -
 Amber waits.
@@ -85,9 +91,8 @@ Amber waits.
 
 // this would be a good point to add knowledge about the ritual/the ritual items to the knowledge inventory
 === describe_ritual_items ===
-
 * Five candles
-A candle salesman named Burns lives in room 302.
+A candle salesman named Burns lives in room 203.
 
 * Charcoal
 From the kitchen. The chef believes in working for what one needs.
@@ -101,8 +106,9 @@ An elegant woman named Gloria should have an excess.
 
 
 == end_of_intro ==
-Amber got up and looked around her suspiciously.
--> END
+
+Amber got up and looked around suspiciously.
+-> top_loop
 // so here we would divert into the rest of the story
 
 
