@@ -1,5 +1,6 @@
-//(If have all 3 things)
-*[ Make your way towards the penthouse]
+=== goto_penthouse ===
+Amber has all the ingredients for the ritual.
+*[Make your way towards the penthouse]
 -> debby_ending_scene
 
 === debby_ending_scene ===
@@ -28,9 +29,9 @@ Debbie silently mutters to herself and looks at a nearby clock. “You have 10 m
 
 With wide eyes, Amber quickly rushes into the elevator and presses the penthouse button.
 
--> elevator
+-> elevator_ending
 
-=== elevator ===
+=== elevator_ending ===
 
 Amber begins to walk back until her back presses up against the wall and she slides down onto the floor. She puts her hands against her face and leaves them there for a few seconds. 
 
@@ -43,11 +44,11 @@ Amber begins to walk back until her back presses up against the wall and she sli
 - 
 After a few moments, Amber looks up from her hands and stares straight ahead. As the number on the elevator increases, she preemptively stands up.
 
-*[<em>Ding</em>]. The doors open to the penthouse and Amber steps out.
+*[<em>Ding</em>] The doors open to the penthouse and Amber steps out.
 
--
+-> penthouse_scene
 
-===penthouse===
+===penthouse_scene===
 
 She stares straight ahead, straight at <em>you.</em>
 
@@ -56,11 +57,11 @@ She stares straight ahead, straight at <em>you.</em>
 
 Amber takes small, cautious steps closer to you. 
 
-“I am. I’m sorry I couldn’t be there with you the entire time. I’m sort of,” you pause, feeling the familiar weight of a chain strapped around your ankle. “Tied to this place”
+“I am. I’m sorry I couldn’t be there with you the entire time. I’m sort of,” you pause, feeling the familiar weight of a chain strapped around your ankle, “tied to this place”
 
 Amber’s eyes go from your face towards the rest of your body. You instinctively look down as well, knowing the chain wasn’t visible but still <em>there.</em>
 
-*[“How were you speaking to me? Advising me on what to do?”] Amber asks skeptically.
+*“How were you speaking to me? Advising me on what to do?” [] Amber asks skeptically.
 
 -
 
@@ -91,15 +92,15 @@ You begin to step into the pentagram as Amber looks around nervously. Once your 
 
 Amber quickly jumps a bit and turns around at the sudden noise. You stare frustratingly as Debby is there at the the doorway with wide eyes. “Quickly!” She yells and motions Amber to come towards her. “Come with me and don’t touch their hand!” 
 
-Amber looks between you and Debby before 
+Amber looks between you and Debby before <>
 
-*[She takes your hand.]
-
--> trapped_ending
-
-*[She runs towards Debby]
+* she takes your hand.
 
 -> returned_ending
+
+* she runs towards Debby.
+
+-> trapped_ending
 
 === returned_ending ===
 

@@ -23,6 +23,9 @@
  
  + {inventory ? charcoal} Charcoal[]
  A small handful of charcoal. It leaves dark smears on Amber's hands.
+ 
+ + {inventory ? stones} Ruby[]
+ A small Ruby. It reminds Amber of her sister.
 
 + {inventory ? butter} Butter[]
 A stick of unsalted, freshly made butter softening in its wrapper.

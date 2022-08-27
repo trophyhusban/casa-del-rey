@@ -3,8 +3,8 @@ INCLUDE variables.ink
 INCLUDE inventory.ink
 INCLUDE navigation.ink
 INCLUDE charcoal.ink
-
-
+INCLUDE crystal.ink
+INCLUDE ending.ink
 
 -> intro
 
@@ -74,8 +74,6 @@ She breathes. She smiles, processing the joke. "Yeah, that's generally what we l
 "Okay."
 "Please don't worry, I have an expert I can talk to! Just wait here for a moment." Debbie starts rifling through her desk, looking for a name, or a phone number, or something. She seems completely absorbed in her task. Watching her, Amber notices her whiteish tint and the see-through quality of her form.
 
-Amber locates a chair by a cluster of tables and sits down. She does not want to just sit and wait for Debbie to come back, but it's a good start.
-
 * There's another way.
 
 -
@@ -107,7 +105,7 @@ An elegant woman named Gloria should have an excess.
 
 == end_of_intro ==
 
-Amber got up and looked around suspiciously.
+Amber looked around.
 -> top_loop
 // so here we would divert into the rest of the story
 

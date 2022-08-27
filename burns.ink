@@ -17,18 +17,21 @@ Amber knocks on the door to Burns' room. {In an instant|After a second|In a mome
     
     ~ asked_burns_where_to_look = true
     ~currentlocation = landing
+    ~in_convo = false
     ->top_loop
 - else:
     "Did you talk to Debbie?" Burns asks.
     "Not yet," Amber says.
     * [Go talk to her] Amber leaves.
+    ~in_convo = false
     ~currentlocation = landing
     ->top_loop
 }
 
 
 === burns_intro ===
-Amber knocks on the door to room 203, shifting on her feet. She has a taut look on her face.
+~saw_burns_intro = true
+Amber knocks on the door, shifting on her feet. She has a taut look on her face.
 "Hello?" Someone calls from inside. Something blocks the light coming through the peephole. "Yes, come in!"
 Amber reaches for the handle, but it won't open. "Um, it's locked. Like every hotel room?"
 The person inside opens the door. "Right. Sorry." He is a round, kind-looking man with a large white mustache. He peers at Amber with raised eyebrows through his pince-nez, which is connected by a chain to his tweed coat. Like the other ghosts, he has a whitish tint to him and he was ever so slightly see-through.
@@ -46,7 +49,7 @@ Instead, she <>
 
 -
 goes inside, pushing past the ghost.
-An open suitcase is on the floor overflowing with clothes. Another one contains an array of candles of different shapes and colors. Burnt out candles have melted into the nightstand next to stacks of paper (drawings of someone?) and a thick ledger. The desk has two pots over two portable stoves, a vat of beeswax, and supplies to make candles. The door to the bathroom is left open with shaving supplies, soaps, and other toiletries littering the vanity and the top of the toilet tank. Amber's parents, and all their stuff, are nowhere to be seen.
+An open suitcase on the floor overflows with clothes. Another one contains an array of candles of different shapes and colors. Burnt out candles have melted into the nightstand next to stacks of paper (drawings of someone?) and a thick ledger. The desk has two pots over two portable stoves, a vat of beeswax, and supplies to make candles. The door to the bathroom is left open with shaving supplies, soaps, and other toiletries littering the vanity and the top of the toilet tank. Amber's parents, and all their stuff, are nowhere to be seen.
 "Where are my parents?" Amber asks.
 "Um..." the ghost says. He shrugs. He looks at Amber for another second, adding everything up. "Are your parents also alive?"
 Amber thinks for a second. "Yes, though that's a weird way to word it."
@@ -124,8 +127,8 @@ Burns looks at the floor. "That would be wonderful." He crosses his arms. "We we
 // so this should be enabled if you are talking to Debbie in the lobby and if you have already spoken to Burns but have not yet given him the gloves
 === get_gloves ===
 ~in_convo = true
-"Hi!" Debbie says when Amber approaches. Her eyebrows are raised and she's avoiding eye contact.
-"Hey," Amber says. "Do you have a lost and found somewhere?"
+* [Ask about a lost and found]"Hey," Amber says. "Do you have a lost and found somewhere?"
+
 "Yeah, right over here actually." Debbie bends down and picks up a plastic bin, putting it on the counter. "Did you lose something already?"
 "No. I'm actually picking something up for someone else."
 "Okay. Everything here is ancient anyway, so please have a look."
@@ -161,6 +164,8 @@ Debbie shrugs. "If they were important, the person who lost them would have come
 * {inventory ? gloves} [Leave] "Thank you," Amber says, putting the bin back on the counter. "This is all I need."
 "Glad I could be of service."
 ~in_convo = false
+~currentlocation = lobby
+~get(gloves)
 -> top_loop
 
 - -> lost_and_found
@@ -176,8 +181,8 @@ Burns stares at the gloves in her hands before slowly reaching for them. He touc
 ~use(gloves)
 ~get(candles)
 ~in_convo = false
-// at this point amber leaves the hotel room and goes back to the second floor location
--> END
+~currentlocation = landing
+-> top_loop
 
 
 

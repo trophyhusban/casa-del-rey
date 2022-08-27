@@ -1,19 +1,12 @@
-// Lobby choice
-*  [Look around for anyone interesting]
-
-VAR gloria_introduced = false
-VAR monica_talk = false
-VAR monica_knows = false
-VAR monica_secrets = false
-VAR monica_betrayed = false
-VAR gloria_tricked = false
-
+=== gloria_transition ===
+* [Take a seat] 
+-> gloria_intro
 === gloria_intro ===
 Amber reluctantly sits down at a nearby table and begins to survey the crowd of ghosts.
 
-Amber’s eyes land on a tall pale woman dressed in a modest green thigh-high dress talking rather quietly towards a smaller male in a black suit. Her shoulders bounce as she laughs and as the woman turns towards Amber’s direction, she can see very clearly the large sparkling Ruby Amulet resting on her chest. The woman walks rather gracefully over to Debbie as the two begin to talk.
+Her eyes land on a tall pale woman dressed in a modest green thigh-high dress talking rather quietly towards a smaller male in a black suit. Her shoulders bounce as she laughs and as the woman turns towards Amber’s direction, she can see very clearly the large sparkling Ruby Amulet resting on her chest. The woman walks rather gracefully over to Debbie as the two begin to talk.
 
-* [Talk to them, maybe they can help you out] “There is no way in hell I’d wanna talk to her,” Amber mumbles.
+* [Talk to her, maybe she can help you out] “There is no way in hell I’d wanna talk to her,” Amber mumbles.
 
 *[Wait until she leaves, then ask Debbie about her]
 
@@ -22,16 +15,12 @@ Amber keeps her eyes on the two as the woman shows off her bright smile to Debbi
 
 Her face quickly turns into one of disgust as she walks away and into the elevator, disappearing from sight as the doors close.
 
-~gloria_introduced  = true
+~ gloria_introduced  = true
+~ currentlocation = lobby
+-> top_loop
 
--> something lobby
-
-//Lobby Choice
-{
--(gloria_introduced ==true)
-*[Ask Debbie questions about Gloria]
-}
 === crystal_questions_debbie ===
+*[Ask Debbie questions about Gloria]
 
 Amber walks up to Debbie. “Can you tell me more about the woman in the green dress?” She asks.
 
@@ -41,7 +30,8 @@ Amber walks up to Debbie. “Can you tell me more about the woman in the green d
 * [Ask what they were talking about]
 “What were the two of you talking about?”
 
-“She was just asking about Monica White seeing if I knew anything about her.” Debbie lets out a sigh. “But between you and me, Gloria is always out trying to create drama for no reason. Loves to spread gossip, that one.”
+“She was just asking about Monica White, seeing if I knew anything about her.” Debbie lets out a sigh. “But between you and me, Gloria is always out trying to create drama for no reason. Loves to spread gossip, that one.”
+~ debbie_mentioned_monica = true
 ->crystal_questions_options
 
 * [Ask where you can find her] “Where is she usually?”
@@ -55,43 +45,42 @@ Amber walks up to Debbie. “Can you tell me more about the woman in the green d
 
 ->crystal_questions_options
 
-*[Ask about Monica White]
+*{debbie_mentioned_monica}[Ask about Monica White]
 
 “Well, few think that Monica White is a troublemaker, I think she’s unique, but she is constantly on the lookout for new things to hoard. It’s hard to miss her: she wears a really tall pointed hat. It doesn't help her with the rumors, but many of us think it’s just for show. If you want to talk to her, I’d suggest looking around the gift shop. She’s really nice, but just,” she pauses to think for a moment, “different.”
-
+~ monica_talk = true
 ->crystal_questions_options
 
-*[Thank Debbie and leave] “Thanks for helping out.”
+* {monica_talk} [Thank Debbie and leave] “Thanks for helping out.”
 
-“No problem!” She says. “Oh, and If you want to talk to her directly, she’s located in room 213. On the 2nd floor.”
+“No problem!” She says. “Oh, and she lives in room 213. On the 2nd floor.”
 
-~monica_talk = true
+"Ok, thanks."
 
--> something lobby
-
+~ currentlocation = lobby
+-> top_loop
 
 
 === gift_shop ===
-
-
-Amber enters the relatively small gift shop filled on the sides with various stuffed animals and knick-knacks with the Casa del Rey name and logo on them. Only two aisles fill up the space between Amber and the cashier, who has a blank look on his face, seemingly deep in thought or indifference. It’s hard not to notice the large comically pointed hat peeking through the top of the middle aisle.
+Amber enters the gift shop. Only two aisles fill up the space between Amber and the cashier, who has a blank look on his face, seemingly deep in thought or indifference. It’s hard not to notice the large comically pointed hat peeking through the top of the middle aisle.
 
 -> gift_shop_options
 
 
 
 === gift_shop_options ===
+~ in_convo = true
 
 * [Approach the cashier] Amber shakes her head. “Looks like he really doesn’t want to be bothered.”
 ->gift_shop_options
 
-{-(monica_knows == true)
-*  [Go talk to the witch]
+* {monica_talk} [Go talk to the witch]
 -> monica_intro
-}
 
 + [Go back to the main room]
--> lobby
+~ currentlocation = lobby
+-> top_loop
+
 
 
 == monica_intro===
@@ -123,9 +112,8 @@ Amber walks up to the aisle where the witch hat is poking through. As she spots 
 
 ->monica_intro_questions
 
-{
--(monica_knows == true)
-* [Convince Monica to work with you] “What if I helped you?”
+
+* {monica_knows} [Convince Monica to work with you] “What if I helped you?”
 
 “How would you help me?” Monica asks.
 “Is there anything you really want from Gloria?” Amber asks.
@@ -139,34 +127,30 @@ Monica’s face brightens with a huge smile. “Oh! A fellow witch! Okay, I will
 
 Gloria walks off with a pep in her step, followed shortly by Amber.
 
-~monica_secrets   = true
-}
--> Lobby
+~ monica_secrets = true
+~ in_convo = false
+~ currentlocation = lobby
+-> top_loop
 
-
-//2nd floor Option
-{-(monica_knows == true)
-*  [Go to Gloria’s room]
--> gloria_room
-}
 
 === gloria_room ===
+~ in_convo = true
 
-Amber walks up to Gloria’s room and knocks on the door. “Just a moment!” Gloria says from behind the door. Shortly after, she opens the door in a different dress and accessories than what she wore earlier. Taking a look at Amber, she scoffs and closes the door.
+Amber walks up to Gloria’s room and knocks on the door. “Just a moment!” Gloria says from behind the door. Shortly after, she opens the door wearing a different dress and accessories than what she wore earlier. Taking a look at Amber, she scoffs and closes the door.
 
-{
--(monica_secrets  == true)
-* [Tell her you have gossip] “I have some gossip about Monica White.”
-}
-{ -(monica_secrets  == false)
-* [Lie to her and tell her you have gossip] “There’s no way I’m risking lying to this woman.” Not knowing what to do, Amber walks away from the door.
 
--> 2nd Floor
-}
+* {monica_secrets} [Tell her you have gossip] “I have some gossip about Monica White.”
+
+
+* {not monica_secrets} [Lie to her and tell her you have gossip] “There’s no way I’m risking lying to this woman.” Not knowing what to do, Amber walks away from the door.
+~ in_convo = false
+~ currentlocation = landing
+-> top_loop
 
 + [Walk away] Amber walks away from the door.
-
--> 2nd Floor
+~ in_convo = false
+~ currentlocation = landing
+-> top_loop
 
 -
 
@@ -183,7 +167,7 @@ Gloria smiles and lets out a short laugh. “About time, I always knew she was u
 
 -
 
-Amber looks around one final time before entering the room that Gloria had left open. As she enters,Amber squints and shakes her head because of all the shiny decorations in the room. Amber speed walks towards what looks like Gloria’s makeup table and begins rummaging before pulling out a large, bedazzled box.
+Amber looks around one final time before entering the room that Gloria had left open. As she enters, she squints and shakes her head because of all the shiny decorations in the room. Amber speed walks towards Gloria's vanity and begins rummaging through the drawers before pulling out a large, bedazzled box.
 
 * [Open the box] Amber opens the box and immediately spots the ruby necklace alongside other jewlery pieces and takes it.
 -
@@ -196,11 +180,11 @@ Amber looks around one final time before entering the room that Gloria had left 
 
 Amber quickly closes the box, places it back to where it belongs and leaves the room. As she closes the door, Gloria comes out around the corner. “Oh, you’re still here.” She sneers before pushing past her and entering her room.
 
-~gloria_tricked  = true
-//Crystal is added into inventory
-
-
--> 2nd floor
+~ gloria_tricked = true
+~ get(stones)
+~ in_convo = false
+~ currentlocation = landing
+-> top_loop
 
 
 ===gloria_betray===
@@ -211,35 +195,26 @@ Gloria’s face brightens with the news. “I knew it!” She whisper-yells. “
 
 “Oh sure!” Gloria exclaims. “Give me one moment.” Gloria enters her room for a moment. Once she comes back, Gloria gives the amulet to Amber. “This will go lovely with your,” she pauses for a moment, “pajamas. Now, time to get Monica shunned!” Gloria says before making sure her door is closed and walks away.
 
-~monica_betrayed  = true
-//Crystal is added into inventory
+~monica_betrayed = true
+~get(stones)
+~ in_convo = false
+~ currentlocation = landing
+-> top_loop
 
-
--> 2nd floor
-
-//Lobby Option
-{
--(gloria_tricked ==true)
+===monica_jewelry===
 *[Find Monica]
-}
-===monica_jewlery===
 
 Amber looks around and spots Monica sitting down alone at a table. Monica spots Amber as she begins to walk closer and gives a huge smile.
 
-“Here are the earrings” Amber says as she places them down at the table. Monica lets out a big smile. “Thank you so much! This will go great with the next spell I’ll be working on!”
+“Here are the earrings,” Amber says as she places them down at the table. Monica lets out a big smile. “Thank you so much! This will go great with the next spell I’ll be working on!”
 
 Monica bounces up from her seat and give Amber a big hug before speed walking away and out of sight.
 
--> Lobby
+~ currentlocation = lobby
+-> top_loop
 
-
-//Lobby option
-{
--(monica_betrayed ==true)
-*[Find Monica]
-}
 ===monica_shunned ===
-
+*[Find Monica]
 As Amber looks around to find Monica, her voice echoes throughout the room. “Please, somebody, talk to me!” She yells as she makes her way around the room. She walks up to another ghost and goes to touch her, but before she could make contact the ghost steps back and walks away, not even acknowledging her presence. Monica looks around frantically and spots Debbie and begins to walk her way. As Monica begins to walk however, Debbie turns and looks the other direction.
 With tears in her eyes, Monica looks over at Amber. “Please,” she whispers loud enough for Amber to hear.
 
@@ -251,4 +226,5 @@ With tears in her eyes, Monica looks over at Amber. “Please,” she whispers l
 
 Monica lets out a quiet sob before going upstairs, out of sight. After a moment of silence, Amber lets out a strained breath of air. “I’m sorry,” she whispers.
 
--> Lobby
+~ currentlocation = lobby
+-> top_loop
