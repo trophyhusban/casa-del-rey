@@ -1,9 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,700|Quattrocento:700');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine&display=swap');
+
+:root {
+    --bg-color: rgb(68, 53, 71);
+    --font-color: rgb(255, 255, 255);
+    --header-color: rgb(213, 222, 41);
+    --top-bar: rgb(56, 45, 58);
+}
 
 body {
     font-family: 'Open Sans', sans-serif;
     font-weight: lighter;
-    background: white;
+    background: var(--bg-color);
     overflow: hidden;
 }
 
@@ -20,8 +29,9 @@ h2 {
 }
 
 h1 {
-    font-size: 30pt;
+    font-size: 32pt;
     margin-bottom: 10px;
+    color: var(--header-color);
 }
 
 h2 {
@@ -29,7 +39,7 @@ h2 {
     font-style: italic;
     font-family: sans-serif;
     font-weight: lighter;
-    color: #BBB;
+    color: var(--header-color);
 }
 
 .header {
@@ -54,7 +64,7 @@ h2 {
     position: fixed;
     display: block;
     width: 100%;
-    background: white;
+    background: var(--top-bar);
     transition: color 0.6s, background 0.6s;
     margin: 0;
     padding-top: 6px;
@@ -97,7 +107,8 @@ h2 {
     margin: 0 auto;
     padding: 20px;
     padding-top: 4em;
-    background: white;
+    background: var(--bg-color);
+    
 }
 
 .switched .container {
@@ -105,18 +116,20 @@ h2 {
 }
 
 p {
-    font-size: 13pt;
-    color: #888;
+    font-size: 14pt;
+    color: var(--font-color);
     line-height: 1.7em;
     font-weight: lighter;
+    font-family: 'Domine', serif;
 }
 
 a {
     font-weight: 700;
-    color: #b97c2c;
+    color: var(--header-color);
     font-family: sans-serif;
     transition: color 0.6s;
     text-decoration: none;
+
 }
 
 a:hover {
@@ -155,6 +168,7 @@ img {
 .choice {
     text-align: center;
     line-height: 1.7em;
+    color: rgb(68, 53, 71);
 }
 
 /* 
@@ -192,7 +206,7 @@ img {
     right: 14px;
     top: 4px;
     user-select: none;
-    background: white;
+    background: var(--top-var);
     transition: color 0.6s, background 0.6s;
 }
 
