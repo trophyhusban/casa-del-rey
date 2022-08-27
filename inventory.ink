@@ -56,14 +56,22 @@ A liver of unknown animal origin, found somewhere in the kitchen.
     +  {saw_burns_intro} [Burns]
         Burns is the kind candle vendor with a large white mustache. He is wearing a tweed coat with a pince-nez attatched to the by a chain.
     
+     + {knows_to_look_for_gloves && !has_gloves} [Obtaining gloves.]
+        {asked_burns_where_to_look:
+            Amber needs to go get those gloves, they're lost somewhere in the hotel. Burns wants them.
+        - else:
+           Amber needs to find those gloves for Burns, though is not sure where they are.
+        }
+    
     + {met_chef} [Chef]
         The chef {chefs_name: , Sam,} is a tall, thin, well groomed man in pristine chef's uniform. He is very opinionated about work.
-    + {knows_to_look_for_gloves && !has_gloves} [Obtaining gloves.]
-        {asked_burns_where_to_look:
-            She needs to go get those gloves, they're lost somewhere in the hotel.
-        - else:
-           She needs to find those gloves, though is not sure where they are.
-        }
+   
+    + {gloria_introduced} [Gloria]
+        A rich woman with too much jewelry. She seems to hate Monica.
+        
+    + {monica_talk} [Monica]
+        A slightly strange witch who has an ongoing rivalry with Gloria.
+        
     + [Debbie]
         The kind ghost who works at the kiosk in the hotel lobby. 
     // options here for ruby storyline

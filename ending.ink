@@ -1,9 +1,9 @@
 === goto_penthouse ===
 Amber has all the ingredients for the ritual.
 *[Make your way towards the penthouse]
--> debby_ending_scene
+-> Debbie_ending_scene
 
-=== debby_ending_scene ===
+=== Debbie_ending_scene ===
 
 As Amber begins to walk towards the closest elevator, loud panting behind her causes her to stop and turn around. 
 
@@ -90,15 +90,15 @@ You begin to step into the pentagram as Amber looks around nervously. Once your 
 
 -
 
-Amber quickly jumps a bit and turns around at the sudden noise. You stare frustratingly as Debby is there at the the doorway with wide eyes. “Quickly!” She yells and motions Amber to come towards her. “Come with me and don’t touch their hand!” 
+Amber quickly jumps a bit and turns around at the sudden noise. You stare frustratingly as Debbie is there at the the doorway with wide eyes. “Quickly!” She yells and motions Amber to come towards her. “Come with me and don’t touch their hand!” 
 
-Amber looks between you and Debby before <>
+Amber looks between you and Debbie before <>
 
 * she takes your hand.
 
 -> returned_ending
 
-* she runs towards Debby.
+* she runs towards Debbie.
 
 -> trapped_ending
 
@@ -116,11 +116,11 @@ The elevator doors open and you step outside. Immediately you hear a quiet argui
 
 === trapped_ending===
 
-Amber runs out of the pentagram and towards Debby. As she runs out, the flames extinguish as quickly as they came. 
+Amber runs out of the pentagram and towards Debbie. As she runs out, the flames extinguish as quickly as they came. 
 
 Quickly, you run after her in hopes of salvaging something. Anything. 
 
-As soon as she reaches Debby, Debbie quickly grabs hold of her and shields her from you. As you reach the entrance of the elevator, you reach out towards them only to be yanked backwards. Looking down at your feet, you see a familiar chain has manifested itself around your ankle.
+As soon as she reaches Debbie, Debbie quickly grabs hold of her and shields her from you. As you reach the entrance of the elevator, you reach out towards them only to be yanked backwards. Looking down at your feet, you see a familiar chain has manifested itself around your ankle.
 
 You look back just as the doors begin to close and see the tears running down Amber's face. You reach out your mind once again and feel their presence in the elevator going down. You reach out to talk and then
 
